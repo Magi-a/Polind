@@ -1,0 +1,1213 @@
+$Tomcolor: #ffffff;
+
+$Phones: "(max-width: 629.98px)";
+$Tablets: "(min-width: 630px) and (max-width: 991.98px)";
+$DevicesTo992: "(max-width: 991.98px)";
+$SmallDesktop: "(min-width: 992px) and (max-width: 1199.98px)";
+$MedDesktop: "(min-width: 1200px) and (max-width: 1366.98px)";
+$BigDesktop: "(min-width: 1367px)";
+
+body, html {
+    margin: 0;
+    padding: 0;
+    //height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background-size: contain;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.menu-background {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(22, 22, 22, 0.99);
+    z-index: 3;
+}
+
+.drop-menu {
+    list-style: none;
+    padding: 0;
+    transform: scale(0.8);
+    transition: 0.2s;
+    opacity: 0;
+}
+
+.drop-menu-open {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.drop-menu-item {
+    margin: 36px 0;
+    text-align: center;
+    font-size: 42px;
+    cursor: pointer;
+
+    a {
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+    }
+
+    @media #{$Tablets} {
+        font-size: 42px;
+    }
+
+    @media #{$Phones} {
+        font-size: 32px;
+    }
+}
+
+#Top {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    min-height: 600px;
+    z-index: 1;
+
+    @media #{$SmallDesktop} {
+        width: 100%;
+    }
+
+    @media #{$DevicesTo992} {
+        z-index: 3;
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        height: 81px;
+        width: 100%;
+        transition: 0.5s;
+        z-index: 4;
+
+        @media #{$SmallDesktop} {
+            height: 60px;
+        }
+
+        @media #{$Tablets} {
+            position: fixed;
+            align-items: center;
+            height: 90px;
+        }
+
+        @media #{$Phones} {
+            position: fixed;
+            align-items: center;
+            height: 60px;
+            //background-color: #ed6950;
+        }
+    }
+
+    .dark-header {
+        background-color: rgb(20, 20, 20);
+    }
+
+    #logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 20px;
+        width: 167px;
+        margin-left: 40px;
+
+        @media #{$SmallDesktop} {
+            width: 130px;
+        }
+
+        @media #{$Phones} {
+            width: 120px;
+            margin-left: 20px;
+        } 
+
+        #logo-img{
+            width: 51px;
+            height: 61px; 
+            //background-color: #ff5d5d;
+
+            @media #{$SmallDesktop} {
+                width: 40px;
+                height: 47px;
+            }
+
+            @media #{$Phones} {
+                width: 30px;
+                height: 36px;
+            } 
+
+            img {
+                position: relative;
+                display: block;
+                z-index: 1;
+                width: 100%;
+                height: 100%; 
+            }
+
+        }
+        
+        #logo-name {
+            display: block;
+            font-size: 30px;
+            font-weight: 700;
+            color: $Tomcolor;
+
+            @media #{$SmallDesktop} {
+                font-size: 24px;
+            }
+
+            @media #{$Phones} {
+                font-size: 24px;
+            } 
+        }
+    }
+
+    #menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 39px;
+        height: 20px;
+        width: 479px;
+        //background-color: azure;
+
+        @media #{$SmallDesktop} {
+            width: 400px;
+        }
+
+        @media #{$DevicesTo992} {
+            display: none;
+        }
+
+        a {
+            color: $Tomcolor;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: 500;
+
+            @media #{$SmallDesktop} {
+                font-size: 14px;
+            }
+        }
+
+        i {
+            margin-left: 5px;
+            color: #fbc54b;
+            font-size: 18px;
+
+            @media #{$SmallDesktop} {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+        position: relative;
+        width: 40px;
+        height: 3px;
+        margin-right: 30px;
+        background-color: white;
+        transition: 0.3s;
+
+        @media #{$DevicesTo992}{
+            display: block;
+        }
+
+        @media #{$Phones} {
+            width: 36px;
+            margin-right: 20px;
+        } 
+
+        &::before {
+            position: absolute;
+            top:12px;
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: white;
+            transition: 0.3s;
+
+            @media #{$Phones} {
+                width: 36px;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            top: -12px;
+            content: '';
+            width: 40px;
+            height: 3px;
+            background-color: white;
+            transition: 0.3s;
+
+            @media #{$Phones} {
+                width: 36px;
+            }
+        }
+
+        #humburger-in {
+            position: relative;
+            margin-top: -12px;
+            width: 100%;
+            height: 28px;
+            cursor: pointer;
+            z-index: 1;
+            
+        }
+    }
+
+    .open {
+
+        background-color: rgba(0, 0, 0, 0);
+        
+        &::after{
+            top: 0;
+            transform: rotate(45deg);
+            background-color: #ed6950;
+        }
+        
+        &::before {
+            top: 0;
+            transform: rotate(-45deg);
+            background-color: #ed6950;
+        }
+
+    }
+
+    #center-block {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        left: 50%;
+        top: 43%;
+        width: 590px;
+        height: 190px;
+        text-align: center;
+        transform: translate(-50%, -50%);
+
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            height: 200px;
+        }
+
+        @media #{$SmallDesktop} {
+            top: 45%;
+            width: 500px;
+        }
+
+        @media #{$DevicesTo992} {
+            width: 500px;
+        }     
+        
+        @media #{$Phones} {
+            width: 300px;
+            top: 50%;
+        } 
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            line-height: 92px;
+            letter-spacing: -0.6px;
+            font-size: 92px;
+            color: #ffffff;
+
+            @media #{$SmallDesktop} {
+                font-size: 72px;
+                line-height: 80px;
+            }
+
+            @media #{$Tablets} {
+                font-size: 72px;
+                line-height: 72px;
+            }
+
+            @media #{$Phones} {
+                font-size: 48px;
+                line-height: 48px;
+            }
+
+            span {
+                color: #ed6950;
+            }
+
+        }
+
+        p{
+            color: #ffffff;
+            opacity: 0.2;
+            font-size: 18px;
+
+            @media #{$SmallDesktop} {
+                font-size: 16px;
+            }
+
+            @media #{$Phones} {
+                font-size: 12px;
+            }
+        }
+
+        #butt-search-place-ref {
+            position: absolute;
+            display: block;
+            left: 50%;
+            bottom: -158px;
+            width: 230px;
+            height: 50px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            line-height: 50px;
+            color: #b98000;
+            background-color: #ffc74a;
+            text-decoration: none;
+            transform: translate(-50%, -50%);
+            transition: 0.5s;
+
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                bottom: -148px;
+            }
+
+            @media #{$SmallDesktop} {
+                font-size: 12px;
+                line-height: 42px;
+                width: 180px;
+                height: 42px;
+                bottom: -120px;
+            }
+
+            @media #{$Phones} {
+                bottom: -80px;
+                font-size: 12px;
+                height: 42px;
+                line-height: 42px;
+                width: 180px;
+            }
+
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    #bottom-text {
+        position: absolute;
+        bottom: 18px;
+        color: #ffffff;
+        width: 100%;
+        text-align: center;
+        font-size: 18px;
+
+        @media #{$SmallDesktop} {
+            font-size: 16px;
+        }
+
+        @media #{$Phones} {
+            font-size: 14px;
+        }
+    }
+
+    img {
+        //display: none;//
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+
+        @media #{$SmallDesktop} {
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: auto;
+            min-width: 100%;
+        }
+
+        @media #{$DevicesTo992}{
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: auto;
+        }
+    }
+}
+
+#Categories {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 1920px;
+    height: 430px;
+    z-index: 2;
+    //background-color: rgba(0, 255, 255, 0.151);
+
+    @media #{$MedDesktop} {
+        margin-top: 30px;
+    }
+
+    @media #{$SmallDesktop} {
+        margin-top: -20px;
+        transform: translateX(-50%) scale(0.85);
+    }
+
+    @media #{$Tablets}{
+        margin-top: -60px;
+        transform: translateX(-50%) scale(0.64);
+    }
+
+    @media #{$Phones} {
+        display: none;
+    }
+
+    .cat {
+        width: 344px;
+        height: 430px;
+
+        img {
+            //display: none;//
+            width: 100%;
+            height: 100%;
+        }
+        
+    }
+
+    .mid {
+        position: relative;
+        width: 370px;
+
+        p {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            top: 316px;
+            text-align: center;
+            font-size: 30px;
+            line-height: 23px;
+            letter-spacing: -0.3px;
+            font-weight: 800;
+            color: #ffffff;
+
+            span {
+
+                font-weight: 400;
+                font-size: 14.5px;
+                color: #ffc74a;
+            }
+        }
+    }
+
+    .cat-cent {
+        p {
+            top: 200px;
+            font-size: 48px;
+            line-height: 29px;
+
+            span {
+                color: #ffffff;
+            }
+        }
+    }
+
+    #butt-view-offers {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        display: block;
+        border-radius: 25px;
+        height: 50px;
+        width: 214px;
+        text-decoration: none;
+        color: #b98000;
+        font-weight: 700;
+        text-align: center;
+        line-height: 50px;
+        letter-spacing: -0.3px;
+        background-color: #ffc74a;
+        transform: translate(-50%, -50%);
+        transition: 0.5s;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+}
+
+#search {
+    width: 100%;
+    height: 275px;
+
+    @media #{$Tablets}{
+        margin-top: -60px;
+    }
+
+    @media #{$DevicesTo992}{
+        height: 300px;
+    }
+
+    h2 {
+        position: relative;
+        top: 50px;
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 0.5px;
+        color: #606f81;
+        text-align: center;
+        
+        @media #{$Phones} {
+            font-size: 24px;
+        }
+    }
+
+    form {
+        display: flex;
+        justify-content: flex-end;
+        margin: 0 auto;
+        margin-top: 100px;
+        width: 810px;
+        height: 60px;
+        font-weight: 300;
+        background-color: #ffffff;
+        border-radius: 30px;
+        box-shadow: 0px 0px 85px 0px rgba(141, 148, 169, 0.15);
+
+        @media #{$DevicesTo992}{
+            width: auto;
+            min-width: 300px;
+            margin: 0 16px;
+            margin-top: 100px;
+        }
+
+        input {
+            height: 100%;
+            width: 86%;
+            border: none;
+            background: none;
+            color: #aabed6;
+            line-height: 60px;
+            font-size: 20px;
+            font-weight: 200;
+            //background-color: #f53939;
+
+            @media #{$DevicesTo992}{
+                width: 84%;
+                margin-left: 15px;
+            }
+
+            &::-ms-clear {
+                display: none;
+            }
+
+            &:focus {
+                color: #606f81;
+            }
+        }
+
+        button {
+            cursor: pointer;
+            width: 80px;
+            height: 100%;
+            background: none;
+            border: none;
+            color: #ffcb57;
+            //color: #524c3f;
+            font-size: 18px;
+
+        }
+    }
+
+    #search-options {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 18px;
+        width: 806px;
+        height: 28px;
+        //background-color: #ed6950;
+
+        @media #{$Phones}{
+            height: 70px;
+        }
+
+        @media #{$DevicesTo992}{
+            width: auto;
+            min-width: 300px;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+
+        #select-options {  
+            display: flex;
+            justify-content: space-between;
+            width: 256px;
+            height: 28px;
+
+            input {
+                display: none;
+            }
+
+            label {
+                display: block;
+                height: 28px;
+                border-radius: 14px; 
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 28px;
+                padding: 0 10px; 
+                color: #ffffff;
+                background-color: #bdc8d9;
+                cursor: pointer;
+                transition: 0.2s;
+            }
+
+            input:checked + label {
+                background-color: #ffc74a;
+            }
+
+        }
+        
+        #popular-places {
+            height: 28px;
+
+            .place {
+                cursor: pointer;
+                display: inline-block;
+                padding: 0 8px;
+                margin: 0 4px;
+                line-height: 28px;
+                border: solid 1px rgba(189, 200, 217, 0.3);
+                //border: solid 1px rgba(255, 33, 100, 0.3);
+                border-radius: 14px;
+                font-weight: 700;
+                font-size: 14px;
+                color: #8d97a5;
+            }
+        }
+    }
+}
+
+#offers {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 1184px;
+    height: auto;
+    //background-color: #b98000;
+
+    @media #{$MedDesktop} {
+        min-height: 900px;
+    }
+
+    @media #{$SmallDesktop} {
+        width: 860px;
+        margin-bottom: 30px;
+    }
+
+    @media #{$DevicesTo992}{
+        width: 100%;
+    }
+
+    .offer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 26px;
+        width: 370px;
+        height: 350px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 85px 0px rgba(141, 148, 169, 0.15);
+
+        @media #{$DevicesTo992}{
+            transform: scale(0.9);
+        }
+
+        img {
+            display: block;
+            margin-top: 10px;
+        }
+
+        p {
+            margin: 0;
+            margin-top: 20px;
+            font-size: 30px;
+            color: #606f81;
+        }
+
+        span {
+            color: #606f81;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        a {
+            display: block;
+            height: 40px;
+            width: 165px;
+            background-color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 24px;
+            line-height: 40px;
+            font-size: 20px;
+            font-weight: 500;
+            color: #bdc8d9;
+            border-radius: 20px;
+            box-shadow: 0px 0px 54px 0px rgba(141, 148, 169, 0.25);
+            transition: 0.3s;
+
+            &:hover {
+                color: #b98000;
+                background-color: #ffc74a;
+            }
+        }
+    }
+}
+
+#Explore-City {
+    position: relative;
+    background-color: rgba(189, 200, 217, 0.1);
+    width: 100vw;
+    height: 890px;
+    overflow: hidden;
+
+    @media #{$DevicesTo992}{
+        height: fit-content;
+    }
+
+    h2 {
+        position: relative;
+        margin: 0;
+        margin-bottom: 2px;
+        padding: 66px 0;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        color: #606f81;
+        z-index: 2;
+
+        @media #{$DevicesTo992}{
+            font-size: 42px;
+        }
+    }
+
+    #info {
+        display: flex;
+        
+        justify-content: space-between;
+        width: 1170px;
+        margin: 0 auto;
+        z-index: 2;
+        //background-color: #b98000
+
+        @media #{$MedDesktop} {
+            width: 1100px;
+        }
+
+        @media #{$SmallDesktop} {
+            width: 900px;
+        }
+
+        @media #{$DevicesTo992}{
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #description {
+            width: 570px;
+            z-index: 2;
+
+            @media #{$DevicesTo992}{
+                margin-top: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            @media #{$Phones}{
+                width: auto;
+                margin: 0 10px;
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            };
+
+            h3 {
+                margin: 40px 0;
+                margin-bottom: 34px;
+                font-size: 36px;
+                color: #f8c759;
+
+                @media #{$SmallDesktop} {
+                    font-size: 30px;
+                }
+
+                @media #{$DevicesTo992}{
+                    font-size: 36px;
+                }
+            }
+
+            p {
+                margin-left: 6px;
+                font-size: 14px;
+                letter-spacing: 0.05px;
+                line-height: 30px;
+                color: #606f81;
+
+                @media #{$SmallDesktop} {
+                    font-size: 12px;
+                }
+
+                @media #{$DevicesTo992}{
+                    text-align: center;
+                }
+            }
+
+            a {
+                display: block;
+                margin-top: 54px;
+                margin-left: 3px;
+                width: 214px;
+                height: 50px;
+                border-radius: 25px;
+                background-color: #ffc74a;
+                text-transform: uppercase;
+                text-decoration: none;
+                line-height: 50px;
+                text-align: center;
+                font-size: 14px;
+                font-weight: 700;
+                letter-spacing: 1px;
+                color: #b98000;
+                transition: 0.3s;
+
+                @media #{$SmallDesktop} {
+                    font-size: 12px;
+                    width: 180px;
+                    height: 46px;
+                    line-height: 46px;
+                }
+
+                @media #{$DevicesTo992} {
+                    margin-bottom: 100px;
+                }
+
+                &:hover {
+                    color: #ffffff;
+                }
+
+            }
+        }
+
+        #image-with-cube {
+
+            position: relative;
+            width: 570px;
+            height: fit-content;
+            z-index: 2;
+
+            @media #{$MedDesktop} {
+                margin-top: 30px;
+                width: 500px;
+                //height: 482px;
+            }
+
+            @media #{$SmallDesktop} {
+                margin-top: 70px;
+                width: 414px;
+                //height: 400px;
+                margin-left: 10px;
+            }
+
+            @media #{$DevicesTo992}{
+                width: 414px;
+                //height: 400px;
+                order: -1;
+            }
+
+            @media #{$Phones}{
+                width: 300px;
+                order: -1;
+            }
+            
+            img {
+                width: 100%;
+                //height: 100%;
+            }
+
+            &::after {
+                display: block;
+                content: '';
+                position: absolute;
+                top: 32px;
+                left: 25px;
+                width: 563px;
+                height: 544px;
+                border: solid 13px #ffc74a;
+                z-index: -1;
+
+                @media #{$MedDesktop} {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                @media #{$SmallDesktop} {
+                    left: 16px;
+                    top: 20px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                @media #{$DevicesTo992}{
+                    left: 10px;
+                    top: 15px;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                @media #{$Phones}{
+                    left: 7px;
+                    top: 7px;
+                    width: 100%;
+                    height: 100%;
+                    border: solid 8px #ffc74a;
+                }
+            }
+
+        }
+    }
+
+    #bg-text {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-right: -110px;
+        transform: translateY(-50%);
+        font-size: 350px;
+        font-weight: 700;
+        line-height: 260px;
+        text-align: center;
+        color: #f7f8fa;
+        text-shadow: 0px 0px 125px rgba(141, 148, 169, 0.25);
+        z-index: 1;
+
+        @media #{$MedDesktop} {
+            font-size: 280px;
+        }
+
+        @media #{$SmallDesktop} {
+            font-size: 190px;
+        }
+
+        @media #{$DevicesTo992}{
+            display: none;
+            font-size: 290px;
+        }
+    }
+}
+
+#Sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 637px;
+    background-image: url('../img/Sign_up/Photo.jpg');
+    //background-color: rgba(252, 4, 78, 0.5);
+
+    @media #{$SmallDesktop} {
+        height: 500px;
+    }
+
+    @media #{$DevicesTo992}{
+        height: 500px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 92px;
+        letter-spacing: -0.2px;
+        text-align: center;
+        color: #ffffff;
+
+        @media #{$MedDesktop} {
+            font-size: 80px;
+        }
+
+        @media #{$SmallDesktop} {
+            font-size: 70px;
+        }
+
+        @media #{$DevicesTo992}{
+            font-size: 62px;
+        }
+
+        @media #{$Phones}{
+            font-size: 48px;
+        }
+    }
+
+    #sign-up-but {
+        display: block;
+        margin: 27px 0;
+        width: 154px;
+        height: 50px;
+        border-radius: 25px;
+        font-size: 14px;
+        letter-spacing: 1.5px;
+        line-height: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        text-align: center;
+        background-color: #ffc74a;
+        color: #b98000;
+        transition: 0.3s;
+
+        @media #{$MedDesktop} {
+            width: 134px;
+            height: 46px;
+            line-height: 46px;
+        }
+
+        @media #{$SmallDesktop} {
+            width: 112px;
+            height: 38px;
+            line-height: 38px;
+            font-size: 12px;
+        }
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+
+    p {
+        //margin-top: 70px;
+        font-size: 18.5px;
+        letter-spacing: -0.55px;
+        text-align: center;
+        font-weight: 500;
+        color: #ffffff;
+
+        @media #{$MedDesktop} {
+            font-size: 16px;
+        }
+
+        @media #{$SmallDesktop} {
+            font-size: 14px;
+        }
+
+        a {
+            color: #ffc74a;
+        }
+    }
+}
+
+footer {
+    position: relative;
+    height: 491px;
+
+    @media #{$DevicesTo992}{
+        height: 390px;
+    }
+
+    #foot-inf {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+
+        #foot-logo {
+            width: 51px;
+            height: 61px;
+            margin-bottom: 20px;
+
+            @media #{$SmallDesktop} {
+                width: 41px;
+                height: 49px;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        p {
+            margin: 0;
+            margin-bottom: 52px;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.25px;
+            text-align: center;
+            color: #606f81;
+
+            @media #{$SmallDesktop} {
+                font-size: 18px;
+            }
+
+            @media #{$DevicesTo992}{
+                font-size: 22px;
+            }
+
+        }
+
+
+    }
+    
+    #bg-foot-text {
+        margin: 0;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 304px;
+        font-weight: 700;
+        text-shadow: 0px 0px 125px rgba(141, 148, 169, 0.25);
+        color: #ffffff;
+        z-index: -1;
+
+        @media #{$MedDesktop} {
+            font-size: 260px;
+        }
+
+        @media #{$SmallDesktop} {
+            font-size: 200px;
+        }
+
+        @media #{$DevicesTo992}{
+            font-size: 150px;
+        }
+
+        @media #{$Phones}{
+            top: 53%;
+            font-size: 82px;
+        }
+    }
+}
